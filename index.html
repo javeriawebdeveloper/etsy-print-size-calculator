@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convert printable wall art sizes from inches to pixels at 300 PPI.">
+  <title>Etsy Print Size Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="calculator.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">For your next printable</p>
+      <h1>A little math.<br>A beautiful print.</h1>
+      <p class="intro">Etsy Print Size Calculator</p>
+      <p class="description">Turn inches into pixel dimensions for your wall art, ready to enter in Canva.</p>
+    </header>
+    <section class="card" aria-labelledby="size-title">
+      <div class="card-heading"><h2 id="size-title">Choose your print size</h2><span class="badge">300 PPI</span></div>
+      <form id="size-form" novalidate>
+        <div class="fields">
+          <div><label for="width">Width <span>(inches)</span></label><input id="width" name="width" type="text" inputmode="decimal" placeholder="e.g. 8" autocomplete="off" aria-describedby="input-hint error" required></div>
+          <div><label for="height">Height <span>(inches)</span></label><input id="height" name="height" type="text" inputmode="decimal" placeholder="e.g. 10" autocomplete="off" aria-describedby="input-hint error" required></div>
+        </div>
+        <p class="hint" id="input-hint">Use positive numbers. For decimals, use a dot, like 8.5.</p>
+        <button type="submit">Calculate pixel size <span aria-hidden="true">→</span></button>
+        <p id="error" role="alert"></p>
+      </form>
+      <div id="result" class="result" hidden>
+        <p class="result-label">Your Canva custom size</p>
+        <p id="dimensions"></p>
+        <p class="units">pixels · width × height</p>
+        <p id="rounding" class="hint"></p>
+        <p class="canva-note">In Canva, choose a custom size, select <strong>px</strong>, and enter the width and height above. Canva’s current size limits may apply.</p>
+      </div>
+      <p id="status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+      <noscript><p class="no-script">Enable JavaScript in your browser to calculate dimensions.</p></noscript>
+    </section>
+    <section class="explanation" aria-labelledby="formula-title">
+      <h2 id="formula-title">The simple formula</h2>
+      <p>Each dimension in inches × 300 = pixels.</p>
+      <p class="example">8 × 10 inches <span aria-hidden="true">→</span> 2400 × 3000 pixels</p>
+    </section>
+    <footer>Target dimensions only. This does not increase an image’s resolution or guarantee print quality. Independent tool; not affiliated with Etsy or Canva.</footer>
+  </main>
+</body>
+</html>
